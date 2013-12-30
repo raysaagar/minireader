@@ -57,52 +57,71 @@
 
 	include("simplehtmldom/simple_html_dom.php");
 	
-	$nl = "<br>";	
-	
+	$nl = "<br>";
+
 	echo "<div class='container'>";
 	echo "<div class='jumbotron'>";
-
-	$html = file_get_html($link);
-	$article = $html->find('div[id=article]',0);
-
-	// TODO - parse out any "descriptions" first, then go through question
-
-	echo "<h2>";
-	echo $article->children(0)->plaintext;
-	echo "</h2>";
 	
-	// get question, question byline, and question byline
-	$i = 1;
-	while(true){
-	
-		if(($article->children($i)->getAttribute('class') == "answer salutation") ||
-			($article->children($i)->getAttribute('class') == "answer")){
+	if ($origin == "straightdope"){
+
+		$html = file_get_html($link);
+		$article = $html->find('div[id=article]',0);
+
+		// parse out any "descriptions" first, then go through question
+		$desc = $article->find('div[id=description]',0);
+		if ($desc != null){
+			echo "<h4>";
+			echo $desc->plaintext;
+			echo "</h4>";
+		}
+
+		$questionTitle = $article->find('h1',0);
+		echo "<h2>";
+		echo $questionTitle->plaintext;
+		echo "</h2>";
+
+		// get question salutation, question text, and question byline
+		$i = 1;
+		$hr = false;
+		while(true){
+
+			if ($article->children($i) == null)
 				break;
+
+			// print dates
+			if ($article->children($i)->getAttribute('class') == "date"){
+				echo $article->children($i);
 			}
-		else{
-			echo $article->children($i);
+			// print question related data
+			if (($article->children($i)->getAttribute('class') == "question salutation") ||
+			   ($article->children($i)->getAttribute('class') == "question") || 
+			   ($article->children($i)->getAttribute('class') == "question byline")) {
+				if (!$hr) {
+					echo "<hr>";
+					$hr = true;
+				}
+				echo $article->children($i);
+		   	}
+		   	// print answer related data
+		   	if (($article->children($i)->getAttribute('class') == "answer salutation") ||
+			   ($article->children($i)->getAttribute('class') == "answer") || 
+			   ($article->children($i)->getAttribute('class') == "answer byline")) {
+				if ($hr) {
+					echo "<hr>";
+					$hr = false;
+				}
+				echo $article->children($i);
+		   	}
+		   	$i++;
 		}
-		if ($i == 10){
-			break;
-		}
-		$i++;
+
 	}
-	
-	echo "<hr>";
-	
-	// get answers
-	$answer = $article->find('p[class="answer"]');
-	
-	foreach($answer as $line){
-		
-		echo $line;
-	
+	else {
+		echo "Article wasn't found!";
 	}
 
 	echo "</div>"; // jumbotron
 	echo "</div>"; // container
-
-	
 ?>
 
 

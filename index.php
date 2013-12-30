@@ -28,6 +28,9 @@
             </div>
             <!-- things to collapse -->
             <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="oldreader/index.php">Old Reader</a></li>
+                </ul>
             </div><!--/.navbar-collapse -->
           </div>
         </div>

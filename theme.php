@@ -1,5 +1,4 @@
 <?
-
 	function displayTheme(){
 		if (isset($_COOKIE["theme"])) {
 			switch ($_COOKIE["theme"]) {
@@ -18,5 +17,4 @@
 	        echo '<link rel="stylesheet" href="css/yeti.css" />';
 		}
 	}
-
 ?>

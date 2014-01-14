@@ -1,3 +1,4 @@
+<? require_once("theme.php"); ?>
 <html>
 
 	<head>
@@ -5,7 +6,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<title>Mobile MiniReader</title> 
-		<link rel="stylesheet" href="css/yeti.css" />
+
+        <? displayTheme(); ?>
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	    <!--[if lt IE 9]>
@@ -29,6 +31,9 @@
 	        <div class="navbar-collapse collapse">
 	        	<ul class="nav navbar-nav">
 	            	<li class="active"><a href="index.php">Home</a></li>
+                    <li class="active"><a href="changetheme.php?theme=0">Light Theme</a></li>
+                    <li class="active"><a href="changetheme.php?theme=1">Gray Theme</a></li>
+                    <li class="active"><a href="changetheme.php?theme=2">Dark Theme</a></li>
 	          	</ul>
 	        </div><!--/.navbar-collapse -->
 	      </div>

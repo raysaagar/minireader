@@ -1,10 +1,12 @@
+<? require_once("theme.php"); ?>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <title>Mobile MiniReader</title> 
-        <link rel="stylesheet" href="css/yeti.css" />
+        <title>Mobile MiniReader</title>
+
+        <? displayTheme(); ?>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -29,6 +31,9 @@
             <!-- things to collapse -->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li class="active"><a href="changetheme.php?theme=0">Light Theme</a></li>
+                    <li class="active"><a href="changetheme.php?theme=1">Gray Theme</a></li>
+                    <li class="active"><a href="changetheme.php?theme=2">Dark Theme</a></li>
                     <li class="active"><a href="oldreader/index.php">Old Reader</a></li>
                 </ul>
             </div><!--/.navbar-collapse -->
@@ -38,15 +43,6 @@
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4"><button type="button" class="btn btn-primary" style="font-variant:small-caps;">Light Theme (Yeti)</button></div>
-                    <div class="col-md-4"><button type="button" class="btn btn-primary" style="font-variant:small-caps;">Gray Theme (Slate)</button></div>
-                    <div class="col-md-4"><button type="button" class="btn btn-primary" style="font-variant:small-caps;">Dark Theme </button></div>
-                </div>
-            </div>
-            <hr>
-
             <div class="container">
                 <h1 style="font-variant:small-caps;">The Straight Dope</h1>
                 <p></p>

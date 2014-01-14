@@ -53,38 +53,8 @@
                 <p><a href="straightdope.php" class="btn btn-primary btn-lg" role="button" style="font-variant:small-caps;">Read &raquo;</a></p>
             </div>
         </div>
-<?
-        
-    // include("simplehtmldom/simple_html_dom.php");
-    
-    // $internalURL = "reader.php?";
-    
-    // $html = file_get_html("http://www.straightdope.com");
-    
-    // $todaysQuestion = $html->find('div[id=todays_question] div[class=teaser] a',0);
-    // $questionLink = $todaysQuestion->attr['href'];
-    // $questionText = $todaysQuestion->plaintext;
-    
-    
-    // echo "<h2>Today's Question</h2>";
-    // echo "<p>";
-    // print('<a href="' . $internalURL . "link=". $questionLink . '" data-role="button" data-theme="a">' . $questionText . '</a>');    
-    // echo "</p>";
-    //var_dump($todaysQuestion);
-    // echo "<hr>";
-    // echo "<h2> Recent Additions </h2>";
-    
-    // $recentQuestions = $html->find('div[id=column_one] div[class=item] div[class=teaser] a');
-    
-    // foreach($recentQuestions as $item){
-    //  $itemLink = $item->attr['href'];
-    //  $itemText = $item->plaintext;
-    //  echo "<p>";
-    //  print('<a href="' . $internalURL . "link=". htmlentities($itemLink) . '"data-role="button" data-theme="a">' . $itemText . '</a>');  
-    //  echo "</p>";
-    // }
-?>
-        <!-- Bootstrap core JavaScript
+
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

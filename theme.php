@@ -15,8 +15,6 @@
 			}
 		}
 		else {
-			// set a new default cookie
-		    // setcookie('theme', 0, 31536000 + time());
 	        echo '<link rel="stylesheet" href="css/yeti.css" />';
 		}
 	}
